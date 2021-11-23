@@ -1,0 +1,69 @@
+<html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body
+    class="logged-out not-pro not-player not-self not-team not-on-team  js-connect-with-application show-register-container connect-with-application">
+
+    <div id="main-container" style="height:600px">
+        <section class="auth-sidebar" style="width: 800px; height:600px">
+            <div class="auth-sidebar-content">
+                <header>
+                    <a href="/" class="logo">
+                      <img src="./assets/home/Logo.png" width="400px" height="125">
+                    </a>
+                    <h2 class="font-heading-2">Login to your <br /> Student-Colab account</h2>
+                    <div *ngIf="spam_counter==1 && showerror" style="margin-left:400px;"><span style='font-size:150px;'>😅</span><br><br><br><br><span style='font-size:20px;color:indianred;margin-left:10px;'><b>Wrong Credentials!</b></span></div>
+                    <div *ngIf="spam_counter==2 && showerror" style="margin-left:400px;"><span style='font-size:150px;'>😐</span><br><br><br><br><span style='font-size:20px;color:indianred;margin-left:10px;'><b>Wrong Credentials!</b></span></div>
+                    <div *ngIf="spam_counter==3 && showerror" style="margin-left:400px;"><span style='font-size:150px;'>😑</span><br><br><br><br><span style='font-size:20px;color:indianred;margin-left:10px;'><b>Wrong Credentials!</b></span></div>
+                    <div *ngIf="spam_counter==4 && showerror" style="margin-left:400px;"><span style='font-size:150px;'>😤</span><br><br><br><br><span style='font-size:20px;color:indianred;margin-left:10px;'><b>Wrong Credentials!</b></span></div>
+                    <div *ngIf="spam_counter==5 && showerror" style="margin-left:400px;"><span style='font-size:150px;'>😠</span><br><br><br><br><span style='font-size:20px;color:indianred;margin-left:10px;'><b>Wrong Credentials!</b></span></div>
+                    <div *ngIf="spam_counter==6 && showerror" style="margin-left:400px;"><span style='font-size:150px;'>😡</span><br><br><br><br><span style='font-size:20px;color:indianred;margin-left:10px;'><b>Wrong Credentials!</b></span></div>
+                    <div *ngIf="spam_counter>=7 && showerror" style="margin-left:400px;"><span style='font-size:150px;'>🙏</span><br><br><br><br><span style='font-size:20px;color:indianred;margin-left:10px;'><b>Please don't spam!</b></span></div>
+                </header>
+                
+            </div>
+        </section>
+        <section class="content">
+            <main>
+                <div class="auth-content">
+                    <img src="./assets/home/login.png" style="margin-top: -120px;" height="200px" width="200px">
+                    <div class="auth-connect-account-container">
+                        <p>Sign in with your Student-Colab credentials to connect your account.</p>
+                        <form (submit)="loginUser($event)" method="post" id="loginForm" name="loginForm">
+
+                            <div class="form-fields">
+                                <fieldset>
+                                    <label for="login">Username or Email</label>
+                                    <input type="text" name="login" id="login" tabindex="1" class="text-input"
+                                        autocorrect="off" autocapitalize="off" style="border: 1px solid;"/>
+                                </fieldset>
+
+                                <fieldset>
+                                    <label for="password">Password <a class="margin-l-8"
+                                            href="/Page404">Forgot?</a></label>
+                                    <input type="password" name="password" id="password" value="" tabindex="2" style="border: 1px solid;"
+                                        class="text-input" />
+                                </fieldset>
+                            </div>
+
+                            <input class="button form-sub" type="submit" value="Sign In" tabindex="3" />
+                            <br><br><br><br>
+                        </form>
+                    </div>
+                </div>
+
+
+            </main>
+        </section>
+        
+    </div>
+
+</body>
+
+</html>
+
+<router-outlet></router-outlet>
