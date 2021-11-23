@@ -1,0 +1,183 @@
+<html>
+<html lang="en">
+
+<head>    
+
+    <link rel="stylesheet" media="screen"
+        href="https://cdn.dribbble.com/assets/auth-868fa9404b9574e401bf603c690c029d50ef91711c84c628e9a46d2055d8b663.css" />
+        <meta charset="UTF-8">
+
+</head>
+
+<body
+    class="logged-out not-pro not-player not-self not-team not-on-team  js-connect-with-application show-register-container connect-with-application">
+
+    <div id="main-container" style="height:800px">
+        <section class="auth-sidebar" style="width: 450px; height:600px;">
+            <div class="auth-sidebar-content">
+                <header>
+                    <a href="/" class="logo">
+                        <img src="./assets/home/Logo.png" width="300px" height="100">
+                    </a>
+                    <h2 class="font-heading-2">Get Started with your <br>Student-Colab account</h2><br>
+                    <img src="./assets/home/signup.png" style="width:200px; height:200px">
+                </header>
+            </div>
+        </section>
+        <section class="content" style="max-height: 600px; width: 1000px; overflow:scroll">
+            <main style="margin-top:-30px;">
+                <div class="auth-content">  
+                  
+                    <h1 class="font-heading-2" style="font-size: 23px;"><br>Manage Club Hassle-free 😎</h1>
+                  
+                    <div class="auth-register-container auth-form signup-form">
+                        <form ngNativeValidate class="gen-form with-messages signup" id="new_user" (submit)="registerUser($event)" method="post">
+                            <div class="form-field-group">
+                                <div class="form-field">
+                                    <fieldset class="user_name"><label for="user_name">Name</label>
+                                        <input autocomplete="name" class="text-input" style="width: 210%;border: 2px solid;" type="text" value="" name="fullname" id="fullname" placeholder="Eg : Atharva Anand Joshi" required/>
+                                        </fieldset>
+                                </div>
+                            </div>
+
+                            <div style="text-decoration: solid; font:bold; margin-left:-20px;">
+                                <label class="radio-inline" style="margin-right: 40px;;">
+                                    <b> Gender : </b>
+                                </label>
+                                <label class="radio-inline" style="padding-top: 5%; padding-left:10%">
+                                  <input type="radio" name="gender" value="Male">&nbsp;&nbsp;Male
+                                </label>
+                                <label class="radio-inline" style="padding-top: 5%; padding-left:10%;">
+                                  <input type="radio" name="gender" value="Female">&nbsp;&nbsp;Female
+                                </label>
+                            </div>
+                            
+
+                            <div class="form-field">
+                                <fieldset class="user_login"><label for="user_login">Member Description</label>
+                                    <textarea rows="5" style="border: 2px solid;"
+                                        autocorrect="on" autocapitalize="off" autocomplete="username" placeholder="Tell us something about yourself...."
+                                        class="text-input" type="text-area" name="bio" id="bio" required></textarea>
+                                </fieldset>
+                            </div>
+
+                            <div class="form-field">
+                                <fieldset class="user_email"><label for="user_email">Email</label><input style="border: 2px solid;"
+                                        class="text-input" type="text" value="" name="email" id="email" placeholder="Eg : sameer@xyz.com" required />
+                                </fieldset>
+                            </div>
+
+                            <div class="form-field">
+                                <fieldset class="user_email"><label for="user_email">Phone</label>
+                                    <input type="tel" id="phone" style="border: 2px solid;" name="phone" placeholder="+91 - xxxxxxxxxx" pattern="^[\+]{1}[0-9]{2}-[0-9]{10}" required>
+                                </fieldset>
+                            </div>
+                            
+
+                            <div class="form-field">
+                                <fieldset class="user_password"><label for="user_password">Password</label>
+                                    <input class="text-input" placeholder="6+ characters" type="password" style="border: 2px solid;"
+                                        name="password" id="password" required/></fieldset>
+                            </div>
+
+                            <div class="form-field">
+                                <fieldset>
+                                    <label for="image">Upload Profile Image &nbsp;&nbsp;👦 ---> ☁️:</label>
+                                    <input type="file" id="img" name="img" accept=".jpg" (change)="handleFileInput($event)"/>
+                                </fieldset>
+                            </div>
+
+                            <div class="form-field check-wrap opt-in">
+                                <fieldset>
+                                    <input type="checkbox" id="user_agree_to_terms" name="user[agree_to_terms]" style="border:2px solid;" required/>
+                                    <label for="user_agree_to_terms">
+                                        Creating an account means you’re okay with our
+                                        <a target="_blank" href="">Terms of Service</a>,
+                                        <a target="_blank" href="">Privacy Policy</a>, and our default
+                                        <a target="_blank" href="">Notification Settings</a>.
+                                    </label>
+                                </fieldset>
+                            </div>
+
+                            <div class="form-btns">
+                                <input type="submit" name="commit" value="Create Account" class="button form-sub" value="Create Account"/>
+                            </div>
+
+
+                            <p class="recaptcha-terms">
+                                Please follow the code of conduct and norms in the clubs
+                                <a href="">Privacy Policy</a> and
+                                <a href="">Terms of Service</a> apply.
+                            </p>
+
+                        </form>
+
+                                        <!--pop-up-->
+                                        <div id="myModal" class="modal">
+                                            <div class="modal-content" id="modal-content">
+                                                <div class="modal-header" id="modalH">
+                                                    <div id="closure"><span class="close" id="close">&times;</span></div>
+                                                    <h2 id="popup1"></h2>   
+                                                </div>
+                                                <div class="modal-body" id="modal-body">
+                                                    <p id="popup2"></p>
+                                                    <p id="popup3"></p>
+                                                </div>
+                                                <div class="modal-footer" id="modalF">
+                                                    <h3 id="popup4" style="text-align: center;"></h3>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </main>
+        </section>
+
+        <section class="content" style="width: 400px;height:600px;">
+            
+            <div id="list1" class="dropdown-check-list" >
+                
+                <div class="neuo">
+                    <form id="select_clubs">
+                  <h4 style=" margin-top:30px;" id="clubHover">CLUBS MANAGEMENT</h4>
+                  <h4 style=" margin-bottom:30px;height:70px;" id="clubHover">Select your clubs &nbsp;&nbsp;?</h4>
+                    
+                    <div id="donetick" *ngIf="done">
+                        <svg class="checkmark2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                        <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                        <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                        </svg>
+                    </div>
+
+
+                    <ul class="" *ngFor="let club of clubs" style="align-items: left; text-align:left;">
+                        <li id="hoverbg" >
+                            <label class="club_class" style="margin-left:100px;"><span id="club_name"> {{club.club_name}} </span>
+                                <input type="checkbox" ngModel #club_name [id]="club.id" (change)="addClubs($event, club.club_name, club.id)" name="club_names" value="{{club.club_name}}">
+                                <span class="checkmark"></span>
+                            </label>
+                        </li>
+
+                    </ul> 
+
+                    
+
+                    <br><br><br>
+                    <input class="btn-xl btn btn-info"  type="button" name="submit" (click)="callDone()" value="DONE"><br><br><br>
+                </form>
+                </div>
+            </div>
+            
+        </section>
+    </div>
+
+   
+
+</body>
+
+</html>
